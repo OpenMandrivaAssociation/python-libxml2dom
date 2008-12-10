@@ -1,0 +1,47 @@
+%define oname libxml2dom
+%define name python-%oname
+
+Summary:	A traditional DOM wrapper around the Python bindings for libxml2
+Name:		%{name}
+Version:	0.4.7
+Release:	%mkrel 1
+Source0:	http://www.boddie.org.uk/python/downloads/libxml2dom-%{version}.tar.gz
+License:	LGPLv3+
+Group:		Development/Python
+BuildRoot:	%{_tmppath}/%{name}-buildroot
+BuildArchitectures: noarch
+URL:		http://www.boddie.org.uk/python/libxml2dom.html
+BuildRequires:	python-devel libxml2-python
+Requires:	libxml2-python
+
+%description
+The libxml2dom package provides a traditional DOM wrapper around the
+Python bindings for libxml2. In contrast to the standard libxml2 bindings,
+libxml2dom provides an API reminiscent of minidom, pxdom and other
+Python-based and Python-related XML toolkits. Performance is fairly
+respectable since libxml2dom makes direct use of libxml2mod - the
+low-level wrapping of libxml2 for Python. Moreover, serialisation of
+documents is much faster than many other toolkits because libxml2dom
+can make direct use of libxml2 rather than employing Python-level
+mechanisms to visit and serialise nodes.
+
+%prep
+%setup -q -n %oname-%version
+
+%build
+python setup.py build
+
+%install
+rm -rf %buildroot
+python setup.py install --root=%{buildroot}
+
+%clean
+rm -rf %{buildroot}
+
+%files
+%defattr(-,root,root)
+%doc README.txt docs/COPYING.txt docs/libxml2macro.html docs/NOTES_libxml2macro.txt docs/styles.css
+%{_bindir}/libxml2macro.py
+%py_puresitedir/%oname/
+%py_puresitedir/*.egg-info
+
