@@ -4,7 +4,7 @@
 Summary:	A traditional DOM wrapper around the Python bindings for libxml2
 Name:		%{name}
 Version:	0.4.7
-Release:	%mkrel 1
+Release:	%mkrel 2
 Source0:	http://www.boddie.org.uk/python/downloads/libxml2dom-%{version}.tar.gz
 License:	LGPLv3+
 Group:		Development/Python
