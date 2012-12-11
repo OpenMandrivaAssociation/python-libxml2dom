@@ -45,3 +45,19 @@ rm -rf %{buildroot}
 %py_puresitedir/%oname/
 %py_puresitedir/*.egg-info
 
+
+
+%changelog
+* Tue Sep 15 2009 Thierry Vignaud <tv@mandriva.org> 0.4.7-3mdv2010.0
++ Revision: 442275
+- rebuild
+
+* Sat Jan 03 2009 Funda Wang <fwang@mandriva.org> 0.4.7-2mdv2009.1
++ Revision: 323753
+- rebuild
+
+* Wed Dec 10 2008 Nicolas Vigier <nvigier@mandriva.com> 0.4.7-1mdv2009.1
++ Revision: 312514
+- import python-libxml2dom
+
+
