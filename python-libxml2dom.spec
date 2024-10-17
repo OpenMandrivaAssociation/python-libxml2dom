@@ -10,7 +10,7 @@ License:	LGPLv3+
 Group:		Development/Python
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildArchitectures: noarch
-URL:		http://www.boddie.org.uk/python/libxml2dom.html
+URL:		https://www.boddie.org.uk/python/libxml2dom.html
 BuildRequires:	python-devel libxml2-python
 Requires:	libxml2-python
 
