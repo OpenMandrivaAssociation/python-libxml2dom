@@ -4,7 +4,7 @@
 Summary:	A traditional DOM wrapper around the Python bindings for libxml2
 Name:		%{name}
 Version:	0.5
-Release:	3
+Release:	4
 Source0:	https://files.pythonhosted.org/packages/35/92/fbf67a6eb368faab70a2ec6473f5f370a868e766e20eb0e10678e97ae75f/libxml2dom-0.5.tar.bz2
 License:	LGPLv3+
 Group:		Development/Python
