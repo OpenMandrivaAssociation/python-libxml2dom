@@ -11,7 +11,9 @@ Group:		Development/Python
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildArchitectures: noarch
 URL:		https://www.boddie.org.uk/python/libxml2dom.html
-BuildRequires:	python-devel libxml2-python
+BuildRequires:	pkgconfig(python)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	libxml2-python
 Requires:	libxml2-python
 
 %description
@@ -27,6 +29,7 @@ mechanisms to visit and serialise nodes.
 
 %prep
 %setup -q -n %oname-%version
+sed -i 's/from distutils.core import setup/from setuptools import setup/' setup.py
 
 %build
 python setup.py build
@@ -34,9 +37,6 @@ python setup.py build
 %install
 rm -rf %buildroot
 python setup.py install --root=%{buildroot}
-
-%clean
-rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
